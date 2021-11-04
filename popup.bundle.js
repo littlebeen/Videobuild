@@ -37864,21 +37864,16 @@ var Popup = function Popup() {
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.myId) {
       setMyId(request.myId);
-      chrome.storage.sync.set({
-        myId: request.myId
-      });
     }
 
     if (request.yourId) {
       setYourId(request.yourId);
-      chrome.storage.sync.set({
-        yourId: request.yourId
-      });
     }
 
     if (request.disconnect) {
       setMyId(0);
       setYourId(0);
+      chrome.storage.sync.clear();
     }
 
     sendResponse('');
@@ -37888,7 +37883,7 @@ var Popup = function Popup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 36,
       columnNumber: 5
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
@@ -37896,7 +37891,7 @@ var Popup = function Popup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", {
@@ -37906,35 +37901,35 @@ var Popup = function Popup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 38,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 40,
       columnNumber: 11
     }
   }, myId ? "I am ".concat(myId) : 'Watch the video together!'), yourId && myId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 41,
       columnNumber: 30
     }
   }, "Connect with friend successfully. Your friend is ", yourId) : myId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 43,
       columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
@@ -37944,7 +37939,7 @@ var Popup = function Popup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 44,
       columnNumber: 15
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
@@ -37957,7 +37952,7 @@ var Popup = function Popup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 49,
       columnNumber: 15
     }
   }, "\u670B\u53CB")) : null, !myId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
@@ -37969,7 +37964,7 @@ var Popup = function Popup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 63,
       columnNumber: 13
     }
   }, "\u8FDE\u63A5") : null, myId ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("button", {
@@ -37977,12 +37972,13 @@ var Popup = function Popup() {
       chrome.runtime.sendMessage({
         disconnect: true
       });
-      chrome.storage.sync.clear();
+      setMyId(0);
+      setYourId(0);
     },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 86,
       columnNumber: 19
     }
   }, "\u65AD\u5F00") : null)));
@@ -40929,7 +40925,7 @@ webpackContext.id = "./node_modules/webpack/hot sync ^\\.\\/log$";
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("0be1ad87a8f3524a79e8")
+/******/ 		__webpack_require__.h = () => ("76627e9288a0efbd00b4")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
