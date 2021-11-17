@@ -5,6 +5,10 @@
 
 使用说明：
 
+图片使用说明：https://bytedance.feishu.cn/docs/doccnAQ3e35o8W0Z6bT6XMZQZzc
+
+纯文字使用说明：
+
 1.下载解压仓库
 
 把该仓库下载下来并解压到合适位置
